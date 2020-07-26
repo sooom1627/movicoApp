@@ -24,8 +24,12 @@ const RecommendTalentCard = () => {
         shadowRadius: 3.84,
       }}
     >
-      <View>
-        <Avatar />
+      <View style={{ marginBottom: 10 }}>
+        <Avatar
+          rounded
+          size="large"
+          source={require("../../../../assets/app/home/talentPicuture.png")}
+        />
       </View>
       <View style={{ flexDirection: "row" }}>
         <Text style={{ fontWeight: "bold", fontSize: 18 }}>きょんだよ</Text>

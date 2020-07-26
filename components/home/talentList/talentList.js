@@ -4,9 +4,27 @@ import TalentListCard from "./talentListCard/talentListCard";
 
 const TalentList = () => {
   return (
-    <View style={{ paddingLeft: 8, marginTop: 28 }}>
-      <Text style={{ fontWeight: "bold", marginBottom: 13 }}>おすすめ</Text>
-      <TalentListCard />
+    <View style={{ marginTop: 28, flex: 1 }}>
+      <Text
+        style={{
+          fontWeight: "bold",
+          marginBottom: 13,
+          marginLeft: 8,
+        }}
+      >
+        おすすめ
+      </Text>
+      <View
+        style={{
+          flexDirection: "row",
+          flex: 1,
+          paddingLeft: 8,
+          paddingRight: 8,
+        }}
+      >
+        <TalentListCard />
+        <TalentListCard />
+      </View>
     </View>
   );
 };
