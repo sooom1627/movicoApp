@@ -21,17 +21,24 @@ export default function RequestContent() {
       >
         <Image
           source={require("../../../../assets/app/request/Group66.png")}
-          style={{ width: 20, height: 20 }}
+          style={{ width: 20, height: 20, marginBottom: 7 }}
+          resizeMode="contain"
         />
-        <Text>りょーた</Text>
-        <Text>って呼んで欲しい！</Text>
+        <Text style={{ fontSize: 18, fontWeight: "bold" }}>りょーた</Text>
+        <Text style={{ marginBottom: 13, fontSize: 13 }}>
+          って呼んで欲しい！
+        </Text>
         <Image
           source={require("../../../../assets/app/request/Ellipse34.png")}
-          style={{ width: 16, height: 16 }}
+          style={{ width: 20, height: 20, marginBottom: 6 }}
+          resizeMode="contain"
         />
-        <Text>定番メッセージ</Text>
-        <Text>Twitter頑張ることを</Text>
-        <Text>応援して欲しい</Text>
+        <Text style={{ fontSize: 14, color: "#C4C4C4" }}>定番メッセージ</Text>
+        <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+          Twitter頑張ること
+          <Text style={{ fontSize: 13, fontWeight: "normal" }}>を</Text>
+        </Text>
+        <Text style={{ fontSize: 18, fontWeight: "bold" }}>応援して欲しい</Text>
       </View>
       <View
         style={{
@@ -41,14 +48,17 @@ export default function RequestContent() {
           marginTop: 24,
         }}
       >
-        <Text>例文</Text>
+        <Text style={{ fontWeight: "bold" }}>例文</Text>
         <View
           style={{
             marginTop: 8,
-            padding: 17,
+            padding: 15,
             backgroundColor: "white",
             borderRadius: 20,
             borderLeftColor: "#D1D1D1",
+            width: "100%",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
           <Text>りょーたさん、Twitter頑張ること応援してるよ！</Text>

@@ -8,10 +8,10 @@ export default function ComentInput() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        marginTop: 24,
+        marginTop: 34,
       }}
     >
-      <Text>ひとこと(任意)</Text>
+      <Text style={{ fontWeight: "bold" }}>ひとこと(任意)</Text>
       <View
         style={{
           marginTop: 8,
@@ -19,6 +19,7 @@ export default function ComentInput() {
           backgroundColor: "white",
           borderRadius: 20,
           borderLeftColor: "#D1D1D1",
+          width: "100%",
         }}
       >
         <Text>りょーたさん、Twitter頑張ること応援してるよ！</Text>
