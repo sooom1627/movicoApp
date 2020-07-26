@@ -12,6 +12,7 @@ const TalentListCard = () => {
           height: 230,
           width: 170,
         }}
+        imageStyle={{ borderRadius: 5 }}
       >
         <View style={{ paddingLeft: 8, flexDirection: "row" }}>
           <Text style={{ fontWeight: "bold", fontSize: 18, color: "white" }}>
