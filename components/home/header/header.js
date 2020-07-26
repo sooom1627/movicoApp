@@ -7,13 +7,15 @@ const HomeHeader = () => {
       <View>
         <Image
           source={require("../../../assets/app/home/Group84.png")}
-          style={{ height: 300, width: "100%" }}
+          resizeMode="cover"
+          style={{ height: 320, width: "100%" }}
         />
       </View>
       <View style={{ paddingLeft: 16, paddingRight: 16, marginTop: 26 }}>
         <Image
-          style={{ width: "100%", height: 120 }}
+          style={{ width: "100%", height: 130 }}
           source={require("../../../assets/app/home/Group127.png")}
+          resizeMode="contain"
         />
       </View>
     </View>
