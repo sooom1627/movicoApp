@@ -3,21 +3,24 @@ import { View, Image, Text, ImageBackground } from "react-native";
 
 const TalentListCard = () => {
   return (
-    <View style={{ height: 230, width: "100%" }}>
+    <View style={{ height: 230, flex: 0.5 }}>
       <ImageBackground
-        source={require("../../../../assets/app/home/talentPicuture.png")}
+        source={require("../../../../assets/app/home/talentPictutre.png")}
         style={{
           resizeMode: "cover",
           justifyContent: "flex-end",
           height: 230,
-          width: 175,
+          width: 170,
         }}
       >
-        <View style={{ paddingLeft: 8 }}>
+        <View style={{ paddingLeft: 8, flexDirection: "row" }}>
           <Text style={{ fontWeight: "bold", fontSize: 18, color: "white" }}>
             神谷 じゅりな
           </Text>
-          <Image></Image>
+          <Image
+            style={{ height: 15, width: 15, marginTop: 4, marginLeft: 2 }}
+            source={require("../../../../assets/app/home/Group25.png")}
+          />
         </View>
         <Text
           style={{
