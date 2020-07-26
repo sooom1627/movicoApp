@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Modal,
-  View,
-  Text,
-  TouchableHighlight,
-  ImageBackground,
-} from "react-native";
+import { Modal, View, Text, TouchableHighlight } from "react-native";
 
 export default function UploadModal(props) {
   return (
@@ -20,7 +14,7 @@ export default function UploadModal(props) {
         }}
       >
         <View>
-          <View style={{ paddingLeft: 16, paddingRight: 16 }}>
+          <View style={{ paddingLeft: 16, paddingRight: 16, marginTop: 30 }}>
             <TouchableHighlight
               style={{ backgroundColor: "#00CEC3" }}
               onPress={props.NextScreen}
