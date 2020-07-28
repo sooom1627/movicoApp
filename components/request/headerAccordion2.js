@@ -18,7 +18,7 @@ import { useNavigation } from "@react-navigation/native";
 const Row = ({ toggleContent, height, title, content }) => {
   const navigation = useNavigation();
   const transition = () => {
-    navigation.navigate("撮影済みリクエスト");
+    navigation.navigate("新規リクエスト");
   };
   const twoFunctionHundler = () => {
     transition();
@@ -121,8 +121,8 @@ export default class HeaderAccodion extends React.Component {
         }}
       >
         <Row
-          title="新規リクエスト"
-          content="撮影済みリクエスト"
+          title="撮影済みリクエスト"
+          content="新規リクエスト"
           toggleContent={this.toggleRowContent}
           height={this.heightRow}
         />

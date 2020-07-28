@@ -6,7 +6,8 @@ import RequestDetail from "./requestDetail/requestDetail";
 import RequestComplete from "./requestComplete/requestComplete";
 import CompletedRequest from "./completedRequest/completedRequest";
 import { createStackNavigator } from "@react-navigation/stack";
-import HeaderDropDown from "./headerDropDown.js";
+import HeaderAccordion from "./headerAccordion";
+import HeaderAccordion2 from "./headerAccordion2";
 
 const Stack = createStackNavigator();
 
@@ -17,10 +18,17 @@ export default function Request() {
         name="新規リクエスト"
         component={HomeScreen}
         options={{
-          headerRight: () => <HeaderDropDown />,
+          headerTitle: () => <HeaderAccordion />,
         }}
       />
-      <Stack.Screen name="撮影済みリクエスト" component={CompletedRequest} />
+      <Stack.Screen
+        name="撮影済みリクエスト"
+        component={CompletedRequest}
+        options={{
+          headerLeft: null,
+          headerTitle: () => <HeaderAccordion2 />,
+        }}
+      />
       <Stack.Screen name="リクエスト詳細" component={RequestDetail} />
       <Stack.Screen
         name="リクエスト完了"
