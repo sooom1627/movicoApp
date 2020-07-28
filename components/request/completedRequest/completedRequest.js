@@ -1,7 +1,7 @@
 import React from "react";
-import { View, Image, Text, Button } from "react-native";
-import styles from "../../mastercss";
-import CompletedRequestCard from "./CompletedRequestCard/completedRequestCard";
+import { View, Image, Text } from "react-native";
+import styles from "../../../masterCss";
+import CompletedRequestCard from "./completedRequestCard/completedRequestCard";
 
 class CompletedRequest extends React.Component {
   render() {
@@ -46,10 +46,6 @@ class CompletedRequest extends React.Component {
               />
             );
           })}
-          <Button
-            title="Go to InvoiceEdit"
-            onPress={() => this.props.navigation.navigate("Home")}
-          />
         </View>
       </View>
     );

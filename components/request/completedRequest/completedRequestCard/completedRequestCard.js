@@ -1,58 +1,53 @@
 import React from "react";
-import { View, Image, Text, Button } from "react-native";
-import styles from "../../mastercss";
-import CompletedRequestCard from "./CompletedRequestCard/completedRequestCard";
+import { View, Text } from "react-native";
+import { Avatar } from "react-native-elements";
+import styles from "../../../../masterCss";
 
-class CompletedRequest extends React.Component {
-  render() {
-    const list = [
-      {
-        name: "りょーた",
-        avatar_url:
-          "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg",
-        date: "2020年3月14日",
-        price: "¥3000",
-        subtitle: "オリジナルメッセージ",
-      },
-      {
-        name: "けいすけ",
-        avatar_url:
-          "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg",
-        date: "2020年3月14日",
-        price: "¥3000",
-        subtitle: "定番メッセージ",
-      },
-    ];
-
-    return (
-      <View style={styles.container}>
-        <Image
-          style={{ width: "100%", height: 264 }}
-          source={require("../../../../assets/app/request/Group82.png")}
+function CompletedRequestCard(props) {
+  return (
+    <View style={styles.container}>
+      <View style={styles.cardContainer}>
+        <Avatar
+          containerStyle={{
+            marginLeft: 10,
+            marginRight: 10,
+            marginTop: 15,
+          }}
+          size="medium"
+          rounded
+          source={props.avatar_url}
         />
-        <View style={{ width: "100%", backgroundColor: "#F5F5F5", padding: 4 }}>
-          <Text style={{ fontSize: 14, color: "#939393", paddingTop: 7 }}>
-            撮影済みのリクエスト
+        <View
+          style={{
+            flex: 1.5,
+            justifyContent: "center",
+            flexDirection: "column",
+          }}
+        >
+          <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+            {props.name}
+            <Text style={{ fontSize: 12 }}>さん</Text>
           </Text>
-          {list.map((l, i) => {
-            return (
-              <CompletedRequestCard
-                key={i}
-                name={l.name}
-                avatar_url={l.avatar_url}
-                date={l.date}
-                price={l.price}
-                subtitle={l.subtitle}
-              />
-            );
-          })}
-          <Button
-            title="Go to InvoiceEdit"
-            onPress={() => this.props.navigation.navigate("Home")}
-          />
+          <Text style={{ color: "#B0B0B0", fontSize: 13 }}>{props.date}</Text>
+          <Text style={{ color: "#B0B0B0", fontSize: 13 }}>
+            {props.subtitle}
+          </Text>
+        </View>
+        <View
+          style={{
+            flex: 1,
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Text style={{ color: "#00CEC3", fontSize: 16, fontWeight: "bold" }}>
+            {props.price}
+          </Text>
         </View>
       </View>
-    );
-  }
+    </View>
+  );
 }
-export default CompletedRequest;
+
+export default CompletedRequestCard;
