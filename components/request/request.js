@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "react-native";
 
 import HomeScreen from "./newRequest/newRequest.js";
 import RequestDetail from "./requestDetail/requestDetail";
