@@ -24,6 +24,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": ""
+    "description": "",
+    "githubUrl": "https://github.com/sooom1627/movicoApp.git"
   }
 }

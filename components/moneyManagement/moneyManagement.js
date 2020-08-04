@@ -5,6 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import AccountCheck from "./accountCheck/accountCheck";
 import Complete from "./complete/complete";
 import HomeScreen from "../request/newRequest/newRequest";
+import AccountChange from "./accountCange/accountChange";
 
 const Stack = createStackNavigator();
 
@@ -18,7 +19,16 @@ export default function MoneyMnagementTop() {
         component={Complete}
         options={{ headerShown: false }}
       />
-      <Stack.Screen name="新規リクエスト" component={HomeScreen} />
+      <Stack.Screen
+        name="振込先口座情報"
+        component={AccountChange}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="新規リクエスト"
+        component={HomeScreen}
+        options={{ headerShown: false }}
+      />
     </Stack.Navigator>
   );
 }

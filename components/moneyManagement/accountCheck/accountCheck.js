@@ -42,6 +42,7 @@ const AccountCheck = () => {
             marginTop: 8,
             marginBottom: 16,
           }}
+          onPress={() => navigation.navigate("振込先口座情報")}
         >
           <Text style={{ fontSize: 14, fontWeight: "bold", color: "#00CEC3" }}>
             口座情報を変更する

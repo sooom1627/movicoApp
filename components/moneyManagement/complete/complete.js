@@ -13,7 +13,14 @@ const Complete = () => {
         paddingRight: 16,
       }}
     >
-      <View style={{ paddingTop: 100, paddingBottom: 60 }}>
+      <View
+        style={{
+          paddingTop: 100,
+          paddingBottom: 60,
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <Image
           source={require("../../../assets/app/moneyManagement/Group127.png")}
           style={{ height: 109, width: 219 }}
