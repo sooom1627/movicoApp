@@ -8,6 +8,7 @@ import NewRequestHeader from "./header/header";
 import RequestNumber from "./requestCase/requestCase.js";
 
 import { useNavigation } from "@react-navigation/native";
+import AsyncStorage from "@react-native-community/async-storage";
 
 const list = [
   {
@@ -27,6 +28,9 @@ const list = [
     subtitle: "定番メッセージ",
   },
 ];
+
+export const USER_KEY = "Movico_Token";
+export const onSignOut = () => AsyncStorage.removeItem(USER_KEY);
 
 function HomeScreen() {
   const navigation = useNavigation();
@@ -54,6 +58,7 @@ function HomeScreen() {
         onPress={() => navigation.navigate("撮影済みリクエスト")}
         title="撮影済み"
       />
+      <Button title="ログアウト" onPress={() => onSignOut()} />
     </ScrollView>
   );
 }

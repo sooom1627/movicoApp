@@ -6,17 +6,18 @@ export default function Auth(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const base64 = require("base-64");
+
   useEffect(() => {
     getData();
   }, []);
 
   const logIn = () => {
-    alert();
     props.func();
   };
 
   const auth = () => {
-    fetch(`http://localhost:8000/auth/`, {
+    fetch(`https://movie-co.com/auth/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -25,6 +26,7 @@ export default function Auth(props) {
     })
       .then((res) => res.json())
       .then((res) => {
+        console.log(res);
         saveData(res.token);
       })
       .catch((error) => console.log(error));
@@ -38,6 +40,9 @@ export default function Auth(props) {
 
   const getData = async () => {
     const token = await AsyncStorage.getItem("Movico_Token");
+    if (token) {
+      logIn();
+    }
   };
 
   return (
@@ -60,6 +65,7 @@ export default function Auth(props) {
         autoCapitalize={"none"}
       />
       <Button onPress={() => auth()} title={"Login"} />
+      <Button onPress={props.func} title="抜け道" />
     </View>
   );
 }
