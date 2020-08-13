@@ -1,12 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  Button,
-  TouchableOpacity,
-} from "react-native";
+import { StyleSheet, Text, View, TextInput, Button } from "react-native";
 import AsyncStorage from "@react-native-community/async-storage";
 
 export default function Auth(props) {
@@ -17,8 +10,13 @@ export default function Auth(props) {
     getData();
   }, []);
 
+  const logIn = () => {
+    alert();
+    props.func();
+  };
+
   const auth = () => {
-    fetch(`http://192.168.1.5:8000/auth/`, {
+    fetch(`http://localhost:8000/auth/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -28,16 +26,18 @@ export default function Auth(props) {
       .then((res) => res.json())
       .then((res) => {
         saveData(res.token);
-        () => setLogin(true);
       })
       .catch((error) => console.log(error));
   };
   const saveData = async (token) => {
-    await AsyncStorage.setItem("MR_Token", token);
+    await AsyncStorage.setItem("Movico_Token", token);
+    if (token) {
+      logIn();
+    }
   };
+
   const getData = async () => {
-    const token = await AsyncStorage.getItem("MR_Token");
-    if (token) () => setLogin(true);
+    const token = await AsyncStorage.getItem("Movico_Token");
   };
 
   return (
