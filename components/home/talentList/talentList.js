@@ -1,8 +1,19 @@
-import React from "react";
-import { View, Text } from "react-native";
+import React, {useState, useEffect} from "react";
+import { View, Text,FlatList } from "react-native";
 import TalentListCard from "./talentListCard/talentListCard";
 
-const TalentList = () => {
+
+export default function TalentList(){
+  const [talents, setTalents] = useState([])
+
+  useEffect(()=>{
+    fetch(
+      'https://movie-co.com/api/talents/',{
+        method:'GET',}
+    ).then(res => res.json()).then(jsonRes => setTalents(jsonRes))
+    .catch( error =>  console.log(error)  )
+  })
+
   return (
     <View style={{ marginTop: 28, flex: 1 }}>
       <Text
@@ -14,6 +25,7 @@ const TalentList = () => {
       >
         おすすめ
       </Text>
+
       <View
         style={{
           flexDirection: "row",
@@ -22,11 +34,16 @@ const TalentList = () => {
           paddingRight: 8,
         }}
       >
-        <TalentListCard />
-        <TalentListCard />
+        {
+        talents.map(talent => {
+          return (
+              <TalentListCard key={talent.id} name={talent.name} profile_pic={talent.profile_pic}/>
+            )
+      })
+      }
       </View>
     </View>
   );
-};
+}
 
-export default TalentList;
+

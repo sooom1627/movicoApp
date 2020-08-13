@@ -1,7 +1,8 @@
 import React from "react";
 import { View, Image, Text, ImageBackground } from "react-native";
+import { recoveredProps } from "expo-error-recovery";
 
-const TalentListCard = () => {
+const TalentListCard = (props) => {
   return (
     <View style={{ height: 230, flex: 0.5 }}>
       <ImageBackground
@@ -16,7 +17,7 @@ const TalentListCard = () => {
       >
         <View style={{ paddingLeft: 8, flexDirection: "row" }}>
           <Text style={{ fontWeight: "bold", fontSize: 18, color: "white" }}>
-            神谷 じゅりな
+            {props.name}
           </Text>
           <Image
             style={{ height: 15, width: 15, marginTop: 4, marginLeft: 2 }}

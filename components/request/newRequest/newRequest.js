@@ -1,5 +1,5 @@
 import React from "react";
-import { View, ScrollView, Text } from "react-native";
+import { View, ScrollView, Button } from "react-native";
 
 import styles from "../../../masterCss";
 
@@ -50,6 +50,10 @@ function HomeScreen() {
           );
         })}
       </View>
+      <Button
+        onPress={() => navigation.navigate("撮影済みリクエスト")}
+        title="撮影済み"
+      />
     </ScrollView>
   );
 }
