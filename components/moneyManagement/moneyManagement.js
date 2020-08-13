@@ -6,6 +6,7 @@ import AccountCheck from "./accountCheck/accountCheck";
 import Complete from "./complete/complete";
 import HomeScreen from "../request/newRequest/newRequest";
 import AccountChange from "./accountCange/accountChange";
+import TransferLogHead from "./transferLog/transferLogHead";
 
 const Stack = createStackNavigator();
 
@@ -17,6 +18,11 @@ export default function MoneyMnagementTop() {
       <Stack.Screen
         name="振込完了"
         component={Complete}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="振込履歴確認"
+        component={TransferLogHead}
         options={{ headerShown: false }}
       />
       <Stack.Screen

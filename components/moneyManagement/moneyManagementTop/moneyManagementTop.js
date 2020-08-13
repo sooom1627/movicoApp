@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Button } from "react-native";
+import { View, Text, Button, TouchableHighlight } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const MoneyManagementTop = () => {
@@ -7,10 +7,15 @@ const MoneyManagementTop = () => {
   return (
     <View>
       <Text>お金画面トップ</Text>
-      <Button
-        title="次のページ"
-        onPress={() => navigation.navigate("口座情報確認")}
-      />
+      <View>
+        <Button
+          title="次のページ"
+          onPress={() => navigation.navigate("口座情報確認")}
+        />
+      </View>
+      <TouchableHighlight onPress={() => navigation.navigate("振込履歴確認")}>
+        <Text>振込履歴確認</Text>
+      </TouchableHighlight>
     </View>
   );
 };
